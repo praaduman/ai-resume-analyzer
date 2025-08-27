@@ -3,7 +3,8 @@ import { Routes } from "react-router";
 
 export default [
     index("routes/home.tsx"),
-   route('/auth', 'routes/auth.tsx'),
-   route('/upload','routes/upload.tsx'),
-   route('/resume/:id', 'routes/resume.tsx')
+    route('/auth', 'routes/auth.tsx'),
+    route('/upload', 'routes/upload.tsx'),
+    route('/resume/:id', 'routes/resume.tsx'),
+    route('/wipe', 'routes/wipe.tsx'),
 ] satisfies RouteConfig;
