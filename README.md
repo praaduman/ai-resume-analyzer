@@ -30,5 +30,9 @@ This tool helps users upload resumes, extract insights, and get AI-generated fee
 
 ---
 
-## 📂 Project Structure
+🤝 Acknowledgments
+
+This project was built by following JavaScript Mastery
+ tutorials and customized with additional features and improvements.
+
 
