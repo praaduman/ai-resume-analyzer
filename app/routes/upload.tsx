@@ -4,11 +4,11 @@ import { useState } from 'react'
 import FileUploader from '~/components/FileUploader';
 import { usePuterStore } from '~/lib/putter';
 import { useNavigate } from 'react-router';
-import { convertPdfToImage } from '~/lib/pdf@img';
+import { convertPdfToImage } from '~/lib/pdf2img';
 import { generateUUID } from '~/lib/utils';
 import { prepareInstructions } from '~/constants';
 
-const upload = () => {
+const Upload = () => {
     const {auth, isLoading, fs, ai, kv} = usePuterStore(); 
     const navigate = useNavigate();
     const [isProcessing, setIsProcessing] = useState(false);
@@ -44,7 +44,7 @@ const upload = () => {
             companyName,jobTitle, jobDescription,
             feedback: '', 
         }
-         await kv.set(`resume:${uuid}`, JSON.stringify(data));
+        
 
         setStatusText('Analyzing...')
 
@@ -59,9 +59,10 @@ const upload = () => {
         : feedback.message.content[0].text;
 
         data.feedback = JSON.parse(feedbackText);
+         await kv.set(`resume:${uuid}`, JSON.stringify(data));
         setStatusText('Analysis complete , redirecting...');
         console.log(data);
-        navigate(`/Resume/${uuid}`);       
+        navigate(`/resume/${uuid}`);       
 
         }
 
@@ -129,4 +130,4 @@ const upload = () => {
   )
 }
 
-export default upload
+export default Upload

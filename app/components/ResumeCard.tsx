@@ -1,5 +1,5 @@
 import {Link} from "react-router";
-import ScoreCircle from "./ScoreCircele";
+import ScoreCircle from "~/components/ScoreCircle";
 import {useEffect, useState} from "react";
 import { usePuterStore } from "~/lib/putter";
 
@@ -44,5 +44,4 @@ const ResumeCard = ({ resume: { id, companyName, jobTitle, feedback, imagePath }
         </Link>
     )
 }
-
 export default ResumeCard
